@@ -10,11 +10,12 @@ bjoern_extension = Extension(
     sources       = SOURCE_FILES,
     libraries     = ['ev'],
     include_dirs  = ['http-parser', '/usr/include/libev', 'include'],
+    library_dirs  = ['lib'],
     define_macros = [('WANT_SENDFILE', '1'),
                      ('WANT_SIGINT_HANDLING', '1')],
     extra_compile_args = ['-std=c99', '-fno-strict-aliasing', '-fcommon',
                           '-fPIC', '-Wall', '-Wextra', '-Wno-unused-parameter',
-                          '-Wno-missing-field-initializers', '-g', '-L ./lib']
+                          '-Wno-missing-field-initializers', '-g']
 )
 
 setup(
